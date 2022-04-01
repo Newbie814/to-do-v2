@@ -1,25 +1,33 @@
 html {
-  background-color: #e9bcb7;
-  background-image: linear-gradient(315deg, #e9bcb7 0%, #29524a 74%);
-  min-height: 1000px;
-  font-family: 'helvetica neue';
+  background: url(https://res.cloudinary.com/dylvkdabj/image/upload/v1647042905/website%20pics%20family/liam-me-studebaker_dgihfy.jpg)
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
+/* body {
+  background: url('https://res.cloudinary.com/dylvkdabj/image/upload/v1647063596/website%20pics%20family/liam-window-sharpened_npompp.jpg')
+    no-repeat;
+  height: 100vh;
+} */
+
 h1 {
-  color: #29524a;
+  color: white;
   padding: 10px;
 }
 
 .box {
   max-width: 400px;
   margin: 50px auto;
-  background: #e9bcb74d;
+  background: #47433e73;
   border-radius: 5px;
   box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
 }
 
 #heading {
-  background-color: #e9bcb785;
+  background-color: #47433e73;
   text-align: center;
 }
 
@@ -48,7 +56,7 @@ p {
   padding: 20px;
   font-size: 20px;
   font-weight: 200;
-  color: #00204a;
+  color: #fff;
 }
 
 form.item {
@@ -61,8 +69,8 @@ button {
   width: 50px;
   border-radius: 50%;
   border-color: transparent;
-  background-color: #e9bcb785;
-  color: #29524a;
+  background-color: #47433e73;
+  color: #fff;
   font-size: 30px;
   padding-bottom: 6px;
   border-width: 0;
@@ -88,7 +96,7 @@ input[type='text']:focus {
 }
 
 ::placeholder {
-  color: rgb(80, 79, 79);
+  color: #fff;
   opacity: 1;
 }
 

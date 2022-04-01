@@ -63,10 +63,10 @@ const List = mongoose.model('List', listSchema);
 //   });
 // });
 
-app.get('/', function (req, res) {
-  Item.find({}, function (err, foundItems) {
+app.get('/', function(req, res) {
+  Item.find({}, function(err, foundItems) {
     if (foundItems.length === 0) {
-      Item.insertMany(defaultItems, function (err) {
+      Item.insertMany(defaultItems, function(err) {
         if (err) {
           console.log(err);
         } else {
@@ -80,10 +80,10 @@ app.get('/', function (req, res) {
   });
 });
 
-app.get('/:customListName', function (req, res) {
+app.get('/:customListName', function(req, res) {
   const customListName = req.params.customListName;
 
-  List.findOne({ name: customListName }, function (err, foundList) {
+  List.findOne({ name: customListName }, function(err, foundList) {
     if (!err) {
       if (!foundList) {
         // create new list
@@ -119,7 +119,7 @@ app.get('/:customListName', function (req, res) {
   // );
 });
 
-app.post('/', function (req, res) {
+app.post('/', function(req, res) {
   const itemName = req.body.newItem;
   const listName = req.body.list;
 
@@ -131,7 +131,7 @@ app.post('/', function (req, res) {
     item.save();
     res.redirect('/');
   } else {
-    List.findOne({ name: listName }, function (err, foundList) {
+    List.findOne({ name: listName }, function(err, foundList) {
       foundList.items.push(item);
       foundList.save();
       res.redirect('/' + listName);
@@ -143,10 +143,10 @@ app.post('/', function (req, res) {
   res.redirect('/' + listName);
 });
 
-app.post('/delete', function (req, res) {
+app.post('/delete', function(req, res) {
   const checkedItemId = req.body.checkbox;
 
-  Item.findByIdAndRemove(checkedItemId, function (err) {
+  Item.findByIdAndRemove(checkedItemId, function(err) {
     if (!err) {
       console.log('Succesfully deleted');
       res.redirect('/');
@@ -154,14 +154,10 @@ app.post('/delete', function (req, res) {
   });
 });
 
-// app.get('/work', function (req, res) {
-//   res.render('list', { listTitle: 'Work List', newListItems: workItems });
-// });
-
-app.get('/about', function (req, res) {
+app.get('/about', function(req, res) {
   res.render('about');
 });
 
-app.listen(3000, function () {
+app.listen(3000, function() {
   console.log('Server started on port 3000');
 });
